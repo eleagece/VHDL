@@ -1,0 +1,163 @@
+#salida del oscilador a 100MHz
+
+NET clk LOC=T9;
+NET clk_sd LOC=P8;
+
+# teclado
+net ps2_clk clock_dedicated_route=false;
+net ps2_clk  loc=B16; 
+net ps2_data loc=E13; 
+
+# sonido
+NET mclk LOC=P11;
+NET lrck LOC=R12;
+NET sclk LOC=T12;
+NET sdti LOC=M10;
+NET sdto LOC=K5;
+
+# VGA
+net rgb<0> loc=C9;
+net rgb<1> loc=E7;
+net rgb<2> loc=D5;
+net rgb<3> loc=A8;
+net rgb<4> loc=A5;
+net rgb<5> loc=C3;
+net rgb<6> loc=C8;
+net rgb<7> loc=D6;
+net rgb<8> loc=B1;
+net hsyncb loc=B7;
+net vsyncb loc=D8;
+
+	#switches placa superior
+
+NET resetdb LOC=K4;
+#NET switn<1> LOC=K3;
+#NET SW<3> LOC=K2;
+#NET SW<4> LOC=J4;
+
+	#switches placa extendida
+
+NET sw<2> LOC=P12;
+NET sw<1> LOC=J1;
+NET sw<0> LOC=H1;
+#NET DIPSW<4> LOC=H3;
+#NET DIPSW<5> LOC=G2;
+#NET DIPSW<6> LOC=K15;
+#NET DIPSW<7> LOC=K16;
+#NET DIPSW<8> LOC=F15;
+
+#
+	#push buttons placa superior
+NET pushb1 LOC=E11; 
+NET pushb2 LOC=A13;
+
+	# Push button placa extendida
+NET reset LOC=H4;
+#NET pushb1 LOC=L5;
+#NET pushb2 LOC=N2;
+#NET pushb4 LOC=M3;
+
+
+#barra de leds placa extendida
+
+NET leds<0> LOC=L5;
+NET leds<1> LOC=N2;
+NET leds<2> LOC=M3;
+NET leds<3> LOC=N1;
+NET leds<4> LOC=T13;
+NET leds<5> LOC=L15;
+NET leds<6> LOC=J13;
+NET leds<7> LOC=H15;
+NET leds<8> LOC=J16;
+NET leds<9> LOC=J14;
+
+ 
+
+#Display 7-segmentos 
+#
+#		   S0
+#		   ---
+#	  S5 |	|s1
+#		S6 ---
+#	  S4 |	|S2
+#		   ---
+#		   S3
+
+
+#Display 7-segmentos de la placa superior
+
+#net d_t<0> loc=R10;
+#net d_t<1> loc=P10;
+#net d_t<2> loc=M11;
+#NET d_t<3> loc=M6;
+#NET d_t<4> loc=N6;
+#NET d_t<5> loc=T7;
+#NET d_t<6> loc=R7;
+
+#Display 7-segmentos de la parte izquierda de la placa extendida:
+
+#NET disp<7> LOC=H14;
+#NET disp<8> LOC=M4;
+#NET disp<9> LOC=P1;
+#NET disp<10> LOC=N3;
+#NET disp<11> LOC=M15;
+#NET disp<12> LOC=H13;
+#NET disp<13> LOC=G16;
+
+#Display 7-segmentos de la parte derecha de la placa extendida
+
+NET disp<0> loc=E2;
+NET disp<1> loc=E1;
+NET disp<2> loc=F3;
+NET disp<3> loc=F2;
+NET disp<4> loc=G4;
+NET disp<5> loc=G3;
+NET disp<6> loc=G1;
+
+# Memoria externa
+NET      "clk"     TNM_NET  =      "clk"; 
+TIMESPEC "TS_clk"  =        PERIOD "clk"  10 ns HIGH 50 %;
+
+INST "me/gen_dlls.dllint" LOC="DCM_X0Y0";
+INST "me/gen_dlls.dllext" LOC="DCM_X1Y0";
+
+net      sclkfb    loc=N8;  # feedback SDRAM clock after PCB delays
+net      sclk_sd   loc=E10; # clock to SDRAM
+net      cke       loc=D7;  # SDRAM clock enable
+net      cs_n      loc=B8;  # SDRAM chip-select
+net      ras_n     loc=A9;  
+net      cas_n     loc=A10; 
+net      we_n      loc=B10; 
+net      ba<0>     loc=A7;  
+net      ba<1>     loc=C7;  
+net      sAddr<0>  loc=B5;  
+net      sAddr<1>  loc=A4;  
+net      sAddr<2>  loc=B4;  
+net      sAddr<3>  loc=E6;  
+net      sAddr<4>  loc=E3;  
+net      sAddr<5>  loc=C1;  
+net      sAddr<6>  loc=E4;  
+net      sAddr<7>  loc=D3;  
+net      sAddr<8>  loc=C2;  
+net      sAddr<9>  loc=A3;  
+net      sAddr<10> loc=B6;  
+net      sAddr<11> loc=C5;  
+net      sAddr<12> loc=C6;  
+net      sData<0>  loc=C15; 
+net      sData<1>  loc=D12; 
+net      sData<2>  loc=A14; 
+net      sData<3>  loc=B13; 
+net      sData<4>  loc=D11; 
+net      sData<5>  loc=A12; 
+net      sData<6>  loc=C11; 
+net      sData<7>  loc=D10; 
+net      sData<8>  loc=B11; 
+net      sData<9>  loc=B12; 
+net      sData<10> loc=C12; 
+net      sData<11> loc=B14; 
+net      sData<12> loc=D14; 
+net      sData<13> loc=C16; 
+net      sData<14> loc=F12; 
+net      sData<15> loc=F13; 
+net      dqmh      loc=D9;  
+net      dqml      loc=C10; 

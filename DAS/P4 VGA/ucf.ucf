@@ -1,0 +1,112 @@
+#salida del oscilador a 100MHz
+#
+NET clock LOC=T9;
+
+#Datos del teclado
+#NET clkTecl CLOCK_DEDICATED_ROUTE=FALSE;
+#NET clkTecl LOC=B16;
+#NET bitSerie LOC=E13;
+#
+
+	#switches placa superior
+
+NET reset LOC=K4;
+#NET SW<2> LOC=K3;
+#NET SW<3> LOC=K2;
+#NET SW<4> LOC=J4;
+
+	#switches placa extendida
+
+#NET reset LOC=P12;
+NET switches(0) LOC=J1;
+NET switches(1) LOC=H1;
+NET switches(2) LOC=H3;
+NET switches(3) LOC=G2;
+NET switches(4) LOC=K15;
+NET switches(5) LOC=K16;
+NET switches(6) LOC=F15;
+
+#
+	#push buttons placa superior
+#NET SW2 LOC=E11; 
+#NET SW3 LOC=A13; 
+
+	# Push button placa extendida
+#NET pushb1 LOC=H4;
+#NET pushb2 LOC=L5;
+#NET pushb3 LOC=N2;
+#NET pushb4 LOC=M3;
+
+
+#barra de leds placa extendida
+
+#NET leds<1> LOC=L5;
+#NET leds<2> LOC=N2;
+#NET leds<3> LOC=M3;
+#NET leds<4> LOC=N1;
+#NET leds<5> LOC=T13;
+#NET leds<6> LOC=L15;
+#NET leds<7> LOC=J13;
+#NET leds<8> LOC=H15;
+#NET leds<9> LOC=J16;
+#NET leds<10> LOC=J14;
+
+ 
+
+#Display 7-segmentos 
+#
+#		   S0
+#		   ---
+#	    S5	|	|s1
+#		    S6
+#		   ---
+#	    S4	|	|S2
+#
+#		   ---
+#		   S3
+
+
+#Display 7-segmentos de la placa superior
+
+#net led1(6) loc=R10;
+#net led1(5) loc=P10;
+#net led1(4) loc=M11;
+#NET led1(3) loc=M6;
+#NET led1(2) loc=N6;
+#NET led1(1) loc=T7;
+#NET led1(0) loc=R7;
+
+#Display 7-segmentos de la parte izquierda de la placa extendida:
+
+#NET codIzq7seg(0) LOC=H14;
+#NET codIzq7seg(1) LOC=M4;
+#NET codIzq7seg(2) LOC=P1;
+#NET codIzq7seg(3) LOC=N3;
+#NET codIzq7seg(4) LOC=M15;
+#NET codIzq7seg(5) LOC=H13;
+#NET codIzq7seg(6) LOC=G16;
+
+
+
+
+#Display 7-segmentos de la parte derecha de la placa extendida
+
+#NET codDer7seg(0) loc=E2;
+#NET codDer7seg(1) loc=E1;
+#NET codDer7seg(2) loc=F3;
+#NET codDer7seg(3) loc=F2;
+#NET codDer7seg(4) loc=G4;
+#NET codDer7seg(5) loc=G3;
+#NET codDer7seg(6) loc=G1;
+
+NET rgb(0) loc=C9;
+NET rgb(1) loc=E7;
+NET rgb(2) loc=D5;
+NET rgb(3) loc=A8;
+NET rgb(4) loc=A5;
+NET rgb(5) loc=C3;
+NET rgb(6) loc=C8;
+NET rgb(7) loc=D6;
+NET rgb(8) loc=B1;
+NET hsyncb loc=B7;
+NET vsyncb loc=D8;
